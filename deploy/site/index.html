@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloudflare App Ops Dashboard</title>
+  <style>
+    :root{--bg:#08101d;--card:#121c33;--text:#eef2ff;--dim:#9aa7cf;--accent:#6d5efc;--border:#253356;--green:#23c483;--yellow:#f7b955;--red:#ff6b6b}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#08101d,#111a31);color:var(--text)}
+    .wrap{max-width:1180px;margin:0 auto;padding:34px 20px 90px}.header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+    .header-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}
+    .card{background:rgba(18,28,51,.94);border:1px solid var(--border);border-radius:18px;padding:22px}
+    .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--green)}
+    .muted{color:var(--dim)}
+    .stat{font-size:38px;font-weight:900}
+    .link{color:#c8c0ff;text-decoration:none}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800;background:rgba(109,94,252,.18);color:#c8c0ff}
+    .btn{display:inline-block;text-decoration:none;padding:12px 14px;border-radius:12px;font-weight:800;font-size:13px;background:var(--accent);color:#fff}
+    .btn.secondary{border:1px solid var(--border);background:transparent;color:var(--text)}
+    .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+    table{width:100%;border-collapse:collapse;margin-top:10px;color:var(--dim);font-size:13px}
+    th,td{padding:10px 6px;border-bottom:1px solid #223049;text-align:left}
+    th{color:#b8c2e7}
+    .section{margin-top:28px}
+    .pill{padding:6px 8px;border-radius:999px;background:#0e1630;border:1px solid var(--border);font-size:12px;color:var(--dim)}
+    .todo-board{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:10px}
+    .todo-card{background:#0c1325;border:1px solid var(--border);border-radius:14px;padding:16px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div>
+        <div class="kicker">Unified monetization control surface</div>
+        <h1 style="margin:8px 0 6px;font-size:54px;line-height:1.02">Cloudflare App Ops</h1>
+        <p class="muted" style="margin:0">One dashboard for live Cloudflare revenue apps: apps, leads, API status, deployment targets, and next actions.</p>
+      </div>
+      <div class="header-actions">
+        <a class="btn" href="https://cloudflare-launch-portfolio.pages.dev">Portfolio</a>
+        <a class="btn secondary" href="https://webhook-witness.scottrmhardie.workers.dev/api/v1/plans" target="_blank">API live</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="kicker">Apps</div>
+        <div class="stat">4</div>
+        <div class="muted">Cloudflare-native revenue products</div>
+        <div class="row" style="margin-top:10px">
+          <a class="link" href="https://webhook-witness-landing.pages.dev">Webhook Witness</a>
+          <a class="link" href="https://api-changelog-radar-landing.pages.dev">API Changelog Radar</a>
+          <a class="link" href="https://tfstate-drift-inspector-landing.pages.dev">tfstate Drift Inspector</a>
+          <a class="link" href="https://cloudflare-launch-portfolio.pages.dev">Portfolio</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="kicker">Live pages</div>
+        <div class="stat">10</div>
+        <div class="muted">Worker + dashboard + landing</div>
+        <table>
+          <tr><th>App</th><th>Live</th></tr>
+          <tr><td>Webhook Witness</td><td><span style="color:var(--green)">live</span></td></tr>
+          <tr><td>API Changelog Radar</td><td><span style="color:var(--green)">live</span></td></tr>
+          <tr><td>tfstate Drift Inspector</td><td><span style="color:var(--green)">live</span></td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <div class="kicker">Innovation stage</div>
+        <div class="stat">1–4</div>
+        <div class="muted">Product phases across apps</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Infra</div>
+        <div class="stat">Local + Cloudflare</div>
+        <div class="muted">Workers, Pages, D1</div>
+      </div>
+    </div>
+
+    <div class="section card">
+      <div class="row">
+        <h2 style="margin:0">Quick Actions</h2>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <a class="btn" href="https://webhook-witness-frontend.pages.dev" target="_blank">Webhook Dashboard</a>
+        <a class="btn" href="https://api-changelog-radar-frontend.pages.dev" target="_blank">Radar Dashboard</a>
+        <a class="btn" href="https://tfstate-drift-inspector-frontend.pages.dev" target="_blank">Drift Dashboard</a>
+        <a class="btn secondary" href="https://github.com/Hardonian/webhook-witness" target="_blank">Webhook Repo</a>
+        <a class="btn secondary" href="https://github.com/Hardonian/api-changelog-radar" target="_blank">Radar Repo</a>
+        <a class="btn secondary" href="https://github.com/Hardonian/tfstate-drift-inspector" target="_blank">Drift Repo</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="todo-board">
+        <div class="todo-card">
+          <div class="kicker">Now</div>
+          <h3 style="margin:6px 0">Unify signals</h3>
+          <p class="muted">Pull one health endpoint from each app. Replace placeholder counts with live stats.</p>
+          <div class="pill">Ops</div>
+        </div>
+        <div class="todo-card">
+          <div class="kicker">Next</div>
+          <h3 style="margin:6px 0">Lead intake</h3>
+          <p class="muted">Feed webhook-witness + radar leads into a single ops list here.</p>
+          <div class="pill">Revenue</div>
+        </div>
+        <div class="todo-card">
+          <div class="kicker">After that</div>
+          <h3 style="margin:6px 0">Utilization + billing</h3>
+          <p class="muted">Show event counts, plan usage, API calls, retention, and upsell triggers.</p>
+          <div class="pill">Growth</div>
+        </div>
+        <div class="todo-card">
+          <div class="kicker">Scale</div>
+          <h3 style="margin:6px 0">Operator-only control surfaces</h3>
+          <p class="muted">Edit plans, pause sources, rerun scans, grant demo access without SSH.</p>
+          <div class="pill">Automation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

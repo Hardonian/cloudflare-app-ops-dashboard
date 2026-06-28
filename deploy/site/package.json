@@ -1,0 +1,9 @@
+{
+  "name": "cloudflare-app-ops-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler pages deploy deploy/site --project-name cloudflare-app-ops-dashboard"
+  }
+}
