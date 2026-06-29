@@ -8,37 +8,29 @@
     :root{--bg:#08101d;--card:#121c33;--text:#eef2ff;--dim:#9aa7cf;--accent:#6d5efc;--border:#253356;--green:#23c483;--yellow:#f7b955;--red:#ff6b6b}
     *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#08101d,#111a31);color:var(--text)}
     .wrap{max-width:1180px;margin:0 auto;padding:34px 20px 90px}.header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
-    .header-actions{display:flex;gap:10px;flex-wrap:wrap}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:18px}
     .card{background:rgba(18,28,51,.94);border:1px solid var(--border);border-radius:18px;padding:22px}
     .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--green)}
-    .muted{color:var(--dim)}
-    .stat{font-size:38px;font-weight:900}
-    .link{color:#c8c0ff;text-decoration:none}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800;background:rgba(109,94,252,.18);color:#c8c0ff}
-    .btn{display:inline-block;text-decoration:none;padding:12px 14px;border-radius:12px;font-weight:800;font-size:13px;background:var(--accent);color:#fff}
-    .btn.secondary{border:1px solid var(--border);background:transparent;color:var(--text)}
-    .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-    table{width:100%;border-collapse:collapse;margin-top:10px;color:var(--dim);font-size:13px}
-    th,td{padding:10px 6px;border-bottom:1px solid #223049;text-align:left}
-    th{color:#b8c2e7}
-    .section{margin-top:28px}
-    .pill{padding:6px 8px;border-radius:999px;background:#0e1630;border:1px solid var(--border);font-size:12px;color:var(--dim)}
-    .todo-board{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:10px}
-    .todo-card{background:#0c1325;border:1px solid var(--border);border-radius:14px;padding:16px}
+    .muted{color:var(--dim)}.stat{font-size:38px;font-weight:900}
+    .badge{padding:4px 8px;border-radius:999px;font-size:11px;font-weight:800;display:inline-block}
+    .badge-green{background:rgba(35,196,131,.18);color:var(--green)}
+    .badge-yellow{background:rgba(247,185,85,.18);color:var(--yellow)}
+    .badge-red{background:rgba(255,107,107,.18);color:var(--red)}
+    .btn{display:inline-block;padding:8px 12px;border-radius:10px;font-weight:700;font-size:12px;text-decoration:none;background:var(--accent);color:#fff;margin:3px}
+    .btn-secondary{border:1px solid var(--border);background:transparent;color:var(--text)}
+    table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+    th,td{padding:8px 6px;border-bottom:1px solid #223049;text-align:left}
+    th{color:#b8c2e7}.section{margin-top:28px}
+    h2{margin:0 0 8px}.price{color:var(--accent);font-weight:700;margin:6px 0}
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="header">
       <div>
-        <div class="kicker">Unified monetization control surface</div>
-        <h1 style="margin:8px 0 6px;font-size:54px;line-height:1.02">Cloudflare App Ops</h1>
-        <p class="muted" style="margin:0">One dashboard for live Cloudflare revenue apps: apps, leads, API status, deployment targets, and next actions.</p>
-      </div>
-      <div class="header-actions">
-        <a class="btn" href="https://cloudflare-launch-portfolio.pages.dev">Portfolio</a>
-        <a class="btn secondary" href="https://webhook-witness.scottrmhardie.workers.dev/api/v1/plans" target="_blank">API live</a>
+        <div class="kicker">Operational overview</div>
+        <h1 style="margin:8px 0 6px;font-size:48px;line-height:1.02">Cloudflare App Ops</h1>
+        <p class="muted" style="margin:0">Status dashboard for Cloudflare-native projects. Each app's actual stage is noted — some are deployed scaffolds, others are actively developed.</p>
       </div>
     </div>
 
@@ -46,191 +38,99 @@
       <div class="card">
         <div class="kicker">Apps</div>
         <div class="stat">4</div>
-        <div class="muted">Cloudflare-native revenue products</div>
-        <div class="row" style="margin-top:10px">
-          <a class="link" href="https://webhook-witness-landing.pages.dev">Webhook Witness</a>
-          <a class="link" href="https://api-changelog-radar-landing.pages.dev">API Changelog Radar</a>
-          <a class="link" href="https://tfstate-drift-inspector-landing.pages.dev">tfstate Drift Inspector</a>
-          <a class="link" href="https://cloudflare-launch-portfolio.pages.dev">Portfolio</a>
-        </div>
+        <div class="muted">Cloudflare-inventory products</div>
       </div>
       <div class="card">
-        <div class="kicker">Live pages</div>
-        <div class="stat">10</div>
-        <div class="muted">Worker + dashboard + landing</div>
-        <table>
-          <tr><th>App</th><th>Live</th></tr>
-          <tr><td>Webhook Witness</td><td><span style="color:var(--green)">live</span></td></tr>
-          <tr><td>API Changelog Radar</td><td><span style="color:var(--green)">live</span></td></tr>
-          <tr><td>tfstate Drift Inspector</td><td><span style="color:var(--green)">live</span></td></tr>
-        </table>
+        <div class="kicker">Deployed pages</div>
+        <div class="stat">9</div>
+        <div class="muted">Workers + dashboards + landings</div>
       </div>
       <div class="card">
-        <div class="kicker">Innovation stage</div>
-        <div class="stat">1–4</div>
-        <div class="muted">Product phases across apps</div>
+        <div class="kicker">Stage range</div>
+        <div class="stat">Scaffold → Deployed</div>
+        <div class="muted">Scaffold → active dev → deployed</div>
       </div>
       <div class="card">
         <div class="kicker">Infra</div>
-        <div class="stat">Local + Cloudflare</div>
-        <div class="muted">Workers, Pages, D1</div>
+        <div class="stat">Workers + Pages + D1</div>
+        <div class="muted">All on Cloudflare free tier</div>
       </div>
     </div>
 
     <div class="section card">
-      <div class="row">
-        <h2 style="margin:0">Quick Actions</h2>
-      </div>
-      <div class="row" style="margin-top:10px">
-        <a class="btn" href="https://webhook-witness-frontend.pages.dev" target="_blank">Webhook Dashboard</a>
-        <a class="btn" href="https://api-changelog-radar-frontend.pages.dev" target="_blank">Radar Dashboard</a>
-        <a class="btn" href="https://tfstate-drift-inspector-frontend.pages.dev" target="_blank">Drift Dashboard</a>
-        <a class="btn secondary" href="https://github.com/Hardonian/webhook-witness" target="_blank">Webhook Repo</a>
-        <a class="btn secondary" href="https://github.com/Hardonian/api-changelog-radar" target="_blank">Radar Repo</a>
-        <a class="btn secondary" href="https://github.com/Hardonian/tfstate-drift-inspector" target="_blank">Drift Repo</a>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="todo-board">
-        <div class="todo-card">
-          <div class="kicker">Now</div>
-          <h3 style="margin:6px 0">Unify signals</h3>
-          <p class="muted">Pull one health endpoint from each app. Replace placeholder counts with live stats.</p>
-          <div class="pill">Ops</div>
-        </div>
-        <div class="todo-card">
-          <div class="kicker">Next</div>
-          <h3 style="margin:6px 0">Lead intake</h3>
-          <p class="muted">Feed webhook-witness + radar leads into a single ops list here.</p>
-          <div class="pill">Revenue</div>
-        </div>
-        <div class="todo-card">
-          <div class="kicker">After that</div>
-          <h3 style="margin:6px 0">Utilization + billing</h3>
-          <p class="muted">Show event counts, plan usage, API calls, retention, and upsell triggers.</p>
-          <div class="pill">Growth</div>
-        </div>
-        <div class="todo-card">
-          <div class="kicker">Scale</div>
-          <h3 style="margin:6px 0">Operator-only control surfaces</h3>
-          <p class="muted">Edit plans, pause sources, rerun scans, grant demo access without SSH.</p>
-          <div class="pill">Automation</div>
-        </div>
-      </div>
+      <h2>Product Status</h2>
+      <table>
+        <tr><th>App</th><th>Stage</th><th>Worker</th><th>Frontend</th><th>Landing</th><th>Docs</th></tr>
+        <tr>
+          <td><strong>Webhook Witness</strong></td>
+          <td><span class="badge badge-yellow">Phase 2 / Deployed</span></td>
+          <td><span class="badge badge-green">Live</span></td>
+          <td><span class="badge badge-green">Live</span></td>
+          <td><span class="badge badge-green">Live</span></td>
+          <td><span class="badge badge-green">Updated</span></td>
+        </tr>
+        <tr>
+          <td><strong>API Changelog Radar</strong></td>
+          <td><span class="badge badge-yellow">Scaffold / Deployed</span></td>
+          <td><span class="badge badge-green">Live*</span></td>
+          <td><span class="badge badge-green">Live*</span></td>
+          <td><span class="badge badge-green">Live*</span></td>
+          <td><span class="badge badge-green">Updated</span></td>
+        </tr>
+        <tr>
+          <td><strong>tfstate Drift Inspector</strong></td>
+          <td><span class="badge badge-yellow">Experimental / Deployed</span></td>
+          <td><span class="badge badge-green">Live*</span></td>
+          <td><span class="badge badge-green">Live*</span></td>
+          <td><span class="badge badge-green">Live*</span></td>
+          <td><span class="badge badge-green">Updated</span></td>
+        </tr>
+        <tr>
+          <td><strong>cloudflare-launch-portfolio</strong></td>
+          <td><span class="badge badge-green">Deployed</span></td>
+          <td>—</td>
+          <td><span class="badge badge-green">Live</span></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+      </table>
+      <p class="muted" style="font-size:12px;margin-top:8px">* Workers and pages deployed but backed by scaffold/experimental code. See each repo's README for actual capabilities.</p>
     </div>
 
     <div class="section card">
-      <div class="kicker" style="margin-bottom:12px">Live Products Portfolio</div>
-      <h2 style="margin:0 0 18px;font-size:38px">Revenue Apps & Next Wedges</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="badge">Live now</div>
-          <h3>Webhook Witness</h3>
-          <div class="muted">Workspace-scoped webhook capture, event inspection, replay plans, lead intake, billing shell.</div>
-          <div class="price">$29–$299</div>
-          <ul>
-            <li>Worker API live</li>
-            <li>Pages dashboard live</li>
-            <li>Lead capture live</li>
-            <li>Workspace token auth live</li>
-          </ul>
-          <div class="row">
-            <a class="btn" href="https://webhook-witness-frontend.pages.dev">Dashboard</a>
-            <a class="btn secondary" href="https://webhook-witness-landing.pages.dev">Landing</a>
-          </div>
-          <div class="todo">Phase 3: real auth + team invites + search and filters</div>
-          <div class="todo">Phase 4: Stripe checkout + billing portal + plan enforcement</div>
-          <div class="todo">Phase 5: Slack alerts + payload diffing + audit export</div>
-        </div>
-
-        <div class="card">
-          <div class="badge">Live now</div>
-          <h3>tfstate Drift Inspector</h3>
-          <div class="muted">Cloudflare-native Terraform drift detection surface with Worker API, dashboard, and landing page.</div>
-          <div class="price">Audit / SaaS wedge</div>
-          <ul>
-            <li>Worker live</li>
-            <li>Frontend live</li>
-            <li>Landing live</li>
-            <li>Browser-smoked</li>
-          </ul>
-          <div class="row">
-            <a class="btn" href="https://tfstate-drift-inspector-frontend.pages.dev">Dashboard</a>
-            <a class="btn secondary" href="https://tfstate-drift-inspector-landing.pages.dev">Landing</a>
-          </div>
-          <div class="todo">Finish repo cleanup + push workflow parity</div>
-          <div class="todo">Add scheduled scans + report exports + paid audit funnel</div>
-        </div>
-
-        <div class="card">
-          <div class="badge">Live now</div>
-          <h3>API Changelog Radar</h3>
-          <div class="muted">Monitor vendor docs, changelogs, webhook specs; diff changes; alert teams before integrations break.</div>
-          <div class="price">$39–$499</div>
-          <ul>
-            <li>Worker live</li>
-            <li>Frontend live</li>
-            <li>Landing live</li>
-          </ul>
-          <div class="row">
-            <a class="btn" href="https://api-changelog-radar-frontend.pages.dev">Dashboard</a>
-            <a class="btn secondary" href="https://api-changelog-radar-landing.pages.dev">Landing</a>
-          </div>
-          <div class="todo">Add tracked-source catalog + webhook spec diffing</div>
-          <div class="todo">Team invites + Stripe billing</div>
-        </div>
+      <h2>Webhook Witness</h2>
+      <p class="muted">Workspace-scoped webhook capture and inspection. Deployed on Workers + Pages + D1.</p>
+      <p><span class="badge badge-yellow">Phase 2</span> <span class="badge badge-green">Worker API live</span> <span class="badge badge-green">Dashboard live</span> <span class="badge badge-green">Lead capture live</span> <span class="badge badge-green">Workspace auth live</span></p>
+      <p class="muted">Billing shell only — Stripe not provisioned. Plan limits defined but not enforced.</p>
+      <div>
+        <a class="btn" href="https://webhook-witness-frontend.pages.dev">Dashboard</a>
+        <a class="btn btn-secondary" href="https://github.com/Hardonian/webhook-witness">Repo</a>
       </div>
+      <p class="muted" style="font-size:12px;margin-top:4px">Next: real auth + team invites. Then: Stripe checkout + quota enforcement.</p>
     </div>
 
     <div class="section card">
-      <div class="kicker" style="margin-bottom:12px">Next Cloudflare-Native Launches</div>
-      <h2 style="margin:0 0 18px;font-size:38px">High-ROI Wedges</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="kicker">Fastest to sell</div>
-          <h3>Client Proof Vault</h3>
-          <div class="muted">Drop screenshots, logs, and incident notes into one case file URL for agencies and consultants.</div>
-          <ul>
-            <li>Target buyer: agencies, ops consultants</li>
-            <li>Offer: shareable client evidence bundle</li>
-            <li>Price: $29/$99</li>
-            <li>Time to first dollar: under 1 week</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="kicker">Leverage play</div>
-          <h3>Runbook Receipt</h3>
-          <div class="muted">Turn production fixes and alerts into customer-facing proof-of-work summaries with links and timestamps.</div>
-          <ul>
-            <li>Target buyer: MSPs, agencies, DevOps retainers</li>
-            <li>Offer: automated weekly delivery receipts</li>
-            <li>Price: $49/$199</li>
-            <li>Time to first dollar: 1–2 weeks</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="kicker">Internal tool</div>
-          <h3>TokenGoblin</h3>
-          <div class="muted">AI spend & token-efficiency observability for the autonomous agent workforce.</div>
-          <ul>
-            <li>Target buyer: internal + SaaS teams</li>
-            <li>Offer: token spend dashboard + optimization</li>
-            <li>Price: TBD</li>
-            <li>Time to first dollar: 2–3 weeks</li>
-          </ul>
-        </div>
+      <h2>API Changelog Radar</h2>
+      <p class="muted">Planned changelog monitoring service. Worker + Pages deployed but currently a scaffold — no diffing, no fetching, no alerts. Well-designed D1 schema exists.</p>
+      <p><span class="badge badge-yellow">Scaffold</span> <span class="badge badge-green">Worker live</span> <span class="badge badge-green">Dashboard live</span> <span class="badge badge-green">Landing live</span></p>
+      <p class="muted">Hardcoded plans only. No billing code. D1 tables (sources, snapshots, diffs, alerts) never queried.</p>
+      <div>
+        <a class="btn" href="https://api-changelog-radar-frontend.pages.dev">Dashboard</a>
+        <a class="btn btn-secondary" href="https://github.com/Hardonian/api-changelog-radar">Repo</a>
       </div>
+      <p class="muted" style="font-size:12px;margin-top:4px">Next: source CRUD, polling engine, content fetching. Then: diff engine + alert dispatch.</p>
     </div>
 
     <div class="section card">
-      <h2>Execution Order</h2>
-      <pre>1. Webhook Witness Phase 3 → real auth, invites, search.
-2. Webhook Witness Phase 4 → Stripe live billing + quota enforcement.
-3. tfstate Drift Inspector cleanup → commit-clean + scheduled paid audit flow.
-4. API Changelog Radar → tracked-source catalog + team billing.
-5. Client Proof Vault → agency-facing productized service wedge.
-6. Runbook Receipt → MSP/DevOps retainer automation.</pre>
+      <h2>tfstate Drift Inspector</h2>
+      <p class="muted">Terraform drift detection. Python CLI backend + Cloudflare Worker/Pages frontend. CLI backend is functional; Cloudflare deploy path is experimental.</p>
+      <p><span class="badge badge-yellow">Experimental</span> <span class="badge badge-green">Worker live</span> <span class="badge badge-green">Frontend live</span> <span class="badge badge-green">Landing live</span></p>
+      <p class="muted">Drift scan engine, Slack alerts, and GitHub PR integration work locally/Fly.io. Cloudflare deploy is a separate experimental path.</p>
+      <div>
+        <a class="btn" href="https://tfstate-drift-inspector-frontend.pages.dev">Dashboard</a>
+        <a class="btn btn-secondary" href="https://github.com/Hardonian/tfstate-drift-inspector">Repo</a>
+      </div>
+      <p class="muted" style="font-size:12px;margin-top:4px">Next: scheduled scans + report exports + paid audit funnel.</p>
     </div>
   </div>
 </body>
